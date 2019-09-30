@@ -1,5 +1,5 @@
 const routes = (app) => {
-    app.route("/roles")
+    app.route('/roles')
     .get((req, res, next) => {
         //middleware
         console.log(`Request from: ${req.originalUrl}`)
