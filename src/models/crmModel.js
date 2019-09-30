@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
 
-const contactSchema = new Schema({
+const productSchema = mongoose.Schema({
     firstName: {
         type: String,
-        required: 'Enter a first name'
+        required: true
     },
     lastName: {
         type: String,
-        required: 'Enter a last name'
+        required: true
     },
     email: {
         type: String
@@ -24,6 +23,6 @@ const contactSchema = new Schema({
         type: Date,
         default: Date.now
     }
-})
+});
 
-module.exports = contactSchema;
+module.exports = mongoose.model('product', productSchema);
