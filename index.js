@@ -4,12 +4,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 3000;
+const PORT = 27017;
 
 //mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:3000/CRMdb', {
-   useNewUrlParser: true
+mongoose.connect('mongodb+srv://admin:4T7HwVnZsLbls6ey@kawaiiburger-hk9yw.mongodb.net/test?retryWrites=true&w=majority', {
+   useNewUrlParser: true,
+   useUnifiedTopology: true
 });
 
 //bodyparser setup

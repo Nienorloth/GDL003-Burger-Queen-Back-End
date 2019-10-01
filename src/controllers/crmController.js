@@ -10,8 +10,21 @@ const addDinnerProduct = (req, res) => {
         if (err) {
             res.send(err);
         }
-        res.json(contact);
+        res.json(product);
     });
 };
 
 module.exports = addDinnerProduct;
+
+
+// const getProduct = (req, res) => {
+//     product.findById(req.params.productId) => {
+//         if (err) {
+//             res.send(err);
+//         }
+//         res.json(contact);
+//     });
+// };
+
+
+// module.exports = getProduct;
