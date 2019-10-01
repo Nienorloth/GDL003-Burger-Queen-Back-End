@@ -1,30 +1,25 @@
 const mongoose = require('mongoose');
-const product = require('../models/crmModel.js');
+const order = require('../models/crmModel');
 
 // const Dinner = mongoose.model('Dinner', product);
 
-const addDinnerProduct = (req, res) => {
-    let newProduct = new product(req.body);
+exports.addNewOrder = (req, res) => {
+    let newOrder = new order(req.body);
 
-    newProduct.save((err,product) => {
+    newOrder.save((err, order) => {
         if (err) {
             res.send(err);
         }
-        res.json(product);
+        res.json(order);
     });
 };
 
-module.exports = addDinnerProduct;
+// exports.getMenuDinner = (req, res, next) => {
+//         product.find() //fetches all the posts
+//            .then(result => {
+//                res.send(result);
+//            }).catch(err => {
+//                res.status(400).send(err);
+//            })
+// }
 
-
-// const getProduct = (req, res) => {
-//     product.findById(req.params.productId) => {
-//         if (err) {
-//             res.send(err);
-//         }
-//         res.json(contact);
-//     });
-// };
-
-
-// module.exports = getProduct;

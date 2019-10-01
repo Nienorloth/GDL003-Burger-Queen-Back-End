@@ -1,15 +1,20 @@
 const mongoose = require('mongoose');
 
 
-const productSchema = mongoose.Schema({
-    img: String,
-    dish: String,
-    price: Number
-    }, {
+const orderSchema = mongoose.Schema({
+    table: {
+        type: Number
+    },
+    dish: {
+        type: String
+    }, 
+    price: {
+        type: Number
+    }, 
     created_date: {
         type: Date,
         default: Date.now
     }
 });
 
-module.exports = mongoose.model('product', productSchema);
+module.exports = mongoose.model('order', orderSchema);
