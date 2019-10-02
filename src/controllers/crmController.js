@@ -1,7 +1,49 @@
 const mongoose = require('mongoose');
-const order = require('../models/crmModel');
+const { menuSchema, orderSchema } = require('../models/crmModel');
+const menuBreakfast = mongoose.model('menuBreakfast', menuSchema);
+const menuDinner = mongoose.model('menuDinner', menuSchema);
+const order = mongoose.model('order', orderSchema);
 
-// const Dinner = mongoose.model('Dinner', product);
+exports.addNewProductBreakfast = (req, res) => {
+    let newProductB = new menuBreakfast(req.body);
+
+    newProductB.save((error, menuBreakfast) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(menuBreakfast);
+    });
+};
+
+exports.getMenuBreakfast = (req, res) => {
+    menuBreakfast.find({}, (error, menuBreakfast) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(menuBreakfast);
+    });
+};
+
+exports.addNewProductDinner = (req, res) => {
+    let newProductD = new menuDinner(req.body);
+
+    newProductD.save((error, menuDinner) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(menuDinner);
+    });
+};
+
+exports.getMenuDinner = (req, res) => {
+    menuDinner.find({}, (error, menuDinner) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(menuDinner);
+    });
+};
+
 exports.addNewOrder = (req, res) => {
     let newOrder = new order(req.body);
 
@@ -13,11 +55,12 @@ exports.addNewOrder = (req, res) => {
     });
 };
 
-// exports.getMenuDinner = (req, res, next) => {
-//         product.find() //fetches all the posts
-//            .then(result => {
-//                res.send(result);
-//            }).catch(err => {
-//                res.status(400).send(err);
-//            })
-// }
+exports.getOrders = (req, res) => {
+    order.find({}, (error, order) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(order);
+    });
+};
+

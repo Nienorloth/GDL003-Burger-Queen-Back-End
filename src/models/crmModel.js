@@ -1,6 +1,22 @@
 const mongoose = require('mongoose');
 
-const orderSchema = mongoose.Schema({
+exports.menuSchema = mongoose.Schema({
+    img: {
+        type: String
+    },
+    dish: {
+        type: String
+    },
+    price: {
+        type: Number
+    }, 
+    created_date: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+exports.orderSchema = mongoose.Schema({
     table: {
         type: Number
     },
@@ -16,4 +32,3 @@ const orderSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('order', orderSchema);
