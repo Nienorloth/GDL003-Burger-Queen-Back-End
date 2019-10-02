@@ -9,11 +9,11 @@ const orderSchema = mongoose.Schema({
     },
     price: {
         type: Number
-    },
+    }, 
     created_date: {
         type: Date,
         default: Date.now
     }
 });
 
-module.exports = mongoose.model("order", orderSchema);
+module.exports = mongoose.model('order', orderSchema);

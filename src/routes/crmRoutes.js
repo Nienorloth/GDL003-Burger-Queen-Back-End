@@ -9,7 +9,7 @@ const routes = (app) => {
         console.log(`Request type: ${req.method}`)
         next();
     }, (req, res, next) => {
-        res.send("GET request successfull!!");
+        res.send('GET request successfull');
     })
     //POST endpoint
     .post(addNewOrder);
