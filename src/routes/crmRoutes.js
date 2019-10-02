@@ -1,7 +1,8 @@
-const { addNewOrder} = require('../controllers/crmController.js');
+const {addNewOrder} = require('../controllers/crmController');
 
 const routes = (app) => {
-    app.route('/menuDinner') 
+
+    app.route('/menuDinner')
     .get((req, res, next) => {
         //middleware
         console.log(`Request from: ${req.originalUrl}`)
@@ -11,8 +12,7 @@ const routes = (app) => {
         res.send('GET request successfull');
     })
     //POST endpoint
-    //.post(addNewProduct);
-    app.get('/posts', addNewOrder);
+    .post(addNewOrder);
 
     app.route("/order/:orderId")
     .put((req, res) =>

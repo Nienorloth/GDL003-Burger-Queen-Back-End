@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 
-
 const orderSchema = mongoose.Schema({
     table: {
         type: Number
     },
     dish: {
         type: String
-    }, 
+    },
     price: {
         type: Number
     }, 
