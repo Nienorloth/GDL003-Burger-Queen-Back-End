@@ -1,8 +1,7 @@
 {
-    "build":{
-    "env": {
-        "token": "@token",
-        "mongourl": "@mongourl"
-    }
-  }
+
+    "builds": [{
+        "src": "index.js",
+        "use": "@now/node-server"
+    }]    
 }

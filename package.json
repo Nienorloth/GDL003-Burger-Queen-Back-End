@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index",
-    "build": "my-framework build --output public",
+    "build": "",
     "deploy": "now -e mongourl=@mongourl -e token=@token"
   },
   "repository": {
