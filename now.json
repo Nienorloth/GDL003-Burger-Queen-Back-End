@@ -1,0 +1,6 @@
+{
+    "env": {
+        "token": "@token",
+        "mongourl": "@mongourl"
+    }
+}
