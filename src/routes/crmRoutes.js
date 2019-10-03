@@ -1,4 +1,20 @@
-const { addNewProductBreakfast, getMenuBreakfast, addNewProductDinner, getMenuDinner, addNewOrder, getOrders } = require('../controllers/crmController');
+const { 
+    getMenuBreakfast, 
+    addNewProductBreakfast, 
+    getProductIDBreakfast, 
+    editProductIDBreakfast, 
+    deleteProductIDBreakfast, 
+    getMenuDinner, 
+    addNewProductDinner, 
+    getProductIDDinner, 
+    editProductIDDinner, 
+    deleteProductIDDinner, 
+    getOrders, 
+    addNewOrder, 
+    getOrderID, 
+    editOrderID, 
+    deleteOrderID, 
+} = require('../controllers/crmController');
 
 const routes = (app) => {
 
@@ -7,58 +23,46 @@ const routes = (app) => {
     .get(getMenuBreakfast);
 
     app.route('/addProductBreakfast')
-    .get((req, res, next) => {
-        //middleware
-        console.log(`Request from: ${req.originalUrl}`)
-        console.log(`Request type: ${req.method}`)
-        next();
-    }, getMenuBreakfast) //GET endpoint for addProductBreakfast
-    //POST endpoint for addProductBreakfast
+    //GET and POST endpoints for addProductBreakfast
+    .get(getMenuBreakfast)
     .post(addNewProductBreakfast);
 
     app.route("/addProductBreakfast/:productId")
-    .get((req, res) =>
-    res.send("GET request successfull!!"))
-    .put((req, res) =>
-    res.send("PUT request successfull!!"))
-    .delete((req, res) =>
-    res.send("DELETE request successfull!!"));
+    //GET PUT DELETE endpoints for specific ID product
+    .get(getProductIDBreakfast)
+    .put(editProductIDBreakfast)
+    .delete(deleteProductIDBreakfast);
 
     app.route('/menuDinner')
     //GET endpoint for menuDinner
     .get(getMenuDinner);
 
     app.route('/addProductDinner')
+    //GET and POST endpoints for addProductDinner
     .get((req, res, next) => {
         //middleware
         console.log(`Request from: ${req.originalUrl}`)
         console.log(`Request type: ${req.method}`)
         next();
-    }, getMenuDinner) //GET endpoint for addProductDinner
-    //POST endpoint for addProductDinner
+    }, getMenuDinner)
     .post(addNewProductDinner);
 
     app.route("/addProductDinner/:productId")
-    .get((req, res) =>
-    res.send("GET request successfull!!"))
-    .put((req, res) =>
-    res.send("PUT request successfull!!"))
-    .delete((req, res) =>
-    res.send("DELETE request successfull!!"));
+    //GET PUT DELETE endpoints for specific ID product
+    .get(getProductIDDinner)
+    .put(editProductIDDinner)
+    .delete(deleteProductIDDinner);
 
     app.route('/orders')
-    //GET endpoint for orders
+    //GET and POST endpoints for orders
     .get(getOrders)
-    //POST endpoint for orders
     .post(addNewOrder);
 
+    //GET PUT DELETE endpoints for specific ID order
     app.route("/orders/:orderId")
-    .get((req, res) =>
-    res.send("GET request successfull!!"))
-    .put((req, res) =>
-    res.send("PUT request successfull!!"))
-    .delete((req, res) =>
-    res.send("DELETE request successfull!!"));
+    .get(getOrderID)
+    .put(editOrderID)
+    .delete(deleteOrderID);
 }
 
 module.exports = routes;

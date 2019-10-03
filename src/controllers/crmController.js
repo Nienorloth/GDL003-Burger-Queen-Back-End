@@ -24,6 +24,33 @@ exports.getMenuBreakfast = (req, res) => {
     });
 };
 
+exports.getProductIDBreakfast = (req, res) => {
+    menuBreakfast.findById(req.params.productId, (error, menuBreakfast) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(menuBreakfast);
+    });
+};
+
+exports.editProductIDBreakfast = (req, res) => {
+    menuBreakfast.findOneAndUpdate({_id: req.params.productId}, req.body, { new: true}, (error, menuBreakfast) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(menuBreakfast);
+    })
+};
+
+exports.deleteProductIDBreakfast = (req, res) => {
+    menuBreakfast.remove({_id: req.params.productId}, (error, menuBreakfast) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json({ message: "Product has been succesfully deleted"});
+    });
+};
+
 exports.addNewProductDinner = (req, res) => {
     let newProductD = new menuDinner(req.body);
 
@@ -41,6 +68,33 @@ exports.getMenuDinner = (req, res) => {
             res.send(error);
         }
         res.json(menuDinner);
+    });
+};
+
+exports.getProductIDDinner = (req, res) => {
+    menuDinner.findById(req.params.productId, (error, menuDinner) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(menuDinner);
+    });
+};
+
+exports.editProductIDDinner = (req, res) => {
+    menuDinner.findOneAndUpdate({_id: req.params.productId}, req.body, { new: true}, (error, menuDinner) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(menuDinner);
+    })
+};
+
+exports.deleteProductIDDinner = (req, res) => {
+    menuDinner.remove({_id: req.params.productId}, (error, menuDinner) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json({ message: "Product has been succesfully deleted"});
     });
 };
 
@@ -64,3 +118,29 @@ exports.getOrders = (req, res) => {
     });
 };
 
+exports.getOrderID = (req, res) => {
+    order.findById(req.params.orderId, (error, order) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(order);
+    });
+};
+
+exports.editOrderID = (req, res) => {
+    order.findOneAndUpdate({_id: req.params.orderId}, req.body, { new: true}, (error, order) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json(order);
+    })
+};
+
+exports.deleteOrderID = (req, res) => {
+    order.remove({_id: req.params.orderId}, (error, order) => {
+        if (error) {
+            res.send(error);
+        }
+        res.json({ message: "Order has been succesfully deleted"});
+    });
+};

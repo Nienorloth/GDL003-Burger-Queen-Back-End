@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 exports.menuSchema = mongoose.Schema({
+    id: {
+        type: Number
+    }, 
     img: {
         type: String
     },
@@ -9,10 +12,6 @@ exports.menuSchema = mongoose.Schema({
     },
     price: {
         type: Number
-    }, 
-    created_date: {
-        type: Date,
-        default: Date.now
     }
 });
 
@@ -20,10 +19,10 @@ exports.orderSchema = mongoose.Schema({
     table: {
         type: Number
     },
-    dish: {
+    dishes: {
         type: String
     },
-    price: {
+    total: {
         type: Number
     }, 
     created_date: {
