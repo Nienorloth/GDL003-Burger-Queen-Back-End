@@ -1,13 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
+const dotenv = require('dotenv');
 const app = express();
-const PORT = 27017;
+dotenv.config();
+console.log(`Your port is ${process.env.PORT}`); //27017
+console.log(`Your URL is ${process.env.URL}`); // mongoURL
+
 
 //mongoose connection to database
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://admin:4T7HwVnZsLbls6ey@kawaiiburger-hk9yw.mongodb.net/kawaii?retryWrites=true&w=majority', {
+mongoose.connect(process.env.URL, {
    useNewUrlParser: true,
    useUnifiedTopology: true
 }).then(() => {
@@ -30,6 +33,6 @@ app.get('/', (req, res) => {
     res.json({ "message": "Welcome to Kawaii Burgers"});
 });
 
-app.listen(PORT, () => 
-    console.log(`Your server is runing on port ${PORT}`)
+app.listen(process.env.PORT, () => 
+    console.log(`Your server is runing on port ${process.env.PORT}`)
  );
