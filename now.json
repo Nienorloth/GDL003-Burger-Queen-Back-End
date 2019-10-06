@@ -8,7 +8,7 @@
           }],
           "routes": [
             {
-              "src": "/menuDinner",
+              "src": ["/menuDinner","menuBreakfast"],
               "dest": "index.js",
               "methods": ["GET"]
             }
