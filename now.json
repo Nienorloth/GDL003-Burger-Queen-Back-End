@@ -11,6 +11,11 @@
               "src": "/menuDinner",
               "dest": "index.js",
               "methods": ["GET"]
+            },
+            {
+              "src": "/menuBreakfast",
+              "dest": "index.js",
+              "methods": ["GET"]
             }
           ]
         ,
