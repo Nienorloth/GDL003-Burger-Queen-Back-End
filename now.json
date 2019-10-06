@@ -5,8 +5,15 @@
           {
             "src": "index.js",
             "use": "@now/node-server"
-          }
-        ],
+          }],
+          "routes": [
+            {
+              "src": "/menuDinner",
+              "dest": "index.js",
+              "methods": ["GET"]
+            }
+          ]
+        ,
         "build": {
           "env": {
             "token": "@token",
