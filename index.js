@@ -29,7 +29,7 @@ routes(app);
 
 //starting the server
 app.get('/', (req, res) => {
-    res.json({ "message": "Welcome to Kawaii Burgers", YOLO: process.env});
+    res.json({ "message": "Welcome to Kawaii Burgers"});
 });
 
 
