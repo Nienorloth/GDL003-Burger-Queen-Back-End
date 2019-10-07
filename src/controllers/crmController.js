@@ -30,7 +30,7 @@ exports.getMenuBreakfast = (req, res) => {
 
 exports.getProductIDBreakfast = (req, res) => {
     menuBreakfast.findById(req.params.productId, (error, menuBreakfast) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
@@ -40,7 +40,7 @@ exports.getProductIDBreakfast = (req, res) => {
 
 exports.editProductIDBreakfast = (req, res) => {
     menuBreakfast.findOneAndUpdate({_id: req.params.productId}, req.body, { new: true}, (error, menuBreakfast) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
@@ -50,7 +50,7 @@ exports.editProductIDBreakfast = (req, res) => {
 
 exports.deleteProductIDBreakfast = (req, res) => {
     menuBreakfast.remove({_id: req.params.productId}, (error, menuBreakfast) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json({ message: "Product has been succesfully deleted"});
         } else {
             res.send('Not authorized');
@@ -62,7 +62,7 @@ exports.addNewProductDinner = (req, res) => {
     let newProductD = new menuDinner(req.body);
 
     newProductD.save((error, menuDinner) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(menuDinner);
         } else {
             res.send('Not authorized');
@@ -72,7 +72,7 @@ exports.addNewProductDinner = (req, res) => {
 
 exports.getMenuDinner = (req, res) => {
     menuDinner.find({}, (error, menuDinner) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(menuDinner);
         } else {
             res.send('Not authorized');
@@ -82,7 +82,7 @@ exports.getMenuDinner = (req, res) => {
 
 exports.getProductIDDinner = (req, res) => {
     menuDinner.findById(req.params.productId, (error, menuDinner) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(menuDinner);
         } else {
             res.send('Not authorized');
@@ -92,7 +92,7 @@ exports.getProductIDDinner = (req, res) => {
 
 exports.editProductIDDinner = (req, res) => {
     menuDinner.findOneAndUpdate({_id: req.params.productId}, req.body, { new: true}, (error, menuDinner) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(menuDinner);
         } else {
             res.send('Not authorized');
@@ -102,7 +102,7 @@ exports.editProductIDDinner = (req, res) => {
 
 exports.deleteProductIDDinner = (req, res) => {
     menuDinner.remove({_id: req.params.productId}, (error, menuDinner) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json({ message: "Product has been succesfully deleted"});
         } else {
             res.send('Not authorized');
@@ -114,7 +114,7 @@ exports.addNewOrder = (req, res) => {
     let newOrder = new order(req.body);
 
     newOrder.save((error, order) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(order);
         } else {
             res.send('Not authorized');
@@ -124,7 +124,7 @@ exports.addNewOrder = (req, res) => {
 
 exports.getOrders = (req, res) => {
     order.find({}, (error, order) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(order);
         } else {
             res.send('Not authorized');
@@ -134,7 +134,7 @@ exports.getOrders = (req, res) => {
 
 exports.getOrderID = (req, res) => {
     order.findById(req.params.orderId, (error, order) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(order);
         } else {
             res.send('Not authorized');
@@ -144,7 +144,7 @@ exports.getOrderID = (req, res) => {
 
 exports.editOrderID = (req, res) => {
     order.findOneAndUpdate({_id: req.params.orderId}, req.body, { new: true}, (error, order) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(order);
         } else {
             res.send('Not authorized');
@@ -154,7 +154,7 @@ exports.editOrderID = (req, res) => {
 
 exports.deleteOrderID = (req, res) => {
     order.remove({_id: req.params.orderId}, (error, order) => {
-        if (req.header === process.env.TOKEN) {
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json({ message: "Order has been succesfully deleted" });
         } else {
             res.send('Not authorized');
