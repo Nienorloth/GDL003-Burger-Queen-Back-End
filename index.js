@@ -1,13 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
 const app = express();
-dotenv.config();
-console.log(`Your port is ${process.env.PORT}`); //27017
-console.log(`Your URL is ${process.env.mongourl}`); // mongoURL
-const jwt = require('jsonwebtoken');
-
+// if (!process.env.now) require("dotenv").config();
 
 //mongoose connection to database
 mongoose.Promise = global.Promise;
@@ -17,7 +14,7 @@ mongoose.connect(process.env.mongourl, {
 }).then(() => {
     console.log("Successfully connected to the database");
 }).catch(error => {
-    console.log("Could not connect to the database.Exiting now...", error);
+    console.log("Could not connect to the database. Exiting now...", error);
     process.exit();
 });
 
