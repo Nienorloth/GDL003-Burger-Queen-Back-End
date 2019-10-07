@@ -1,57 +1,57 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "index.js",
-            "use": "@now/node-server"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/menuBreakfast",
-            "dest": "index.js",
-            "methods": ["GET"]
-        },
-        {
-            "src": "/addProductBreakfast",
-            "dest": "index.js",
-            "methods": ["GET"]
-        },
-        {
-            "src": "/addProductBreakfast/(.*)",
-            "dest": "index.js",
-            "methods": ["GET"]
-        },
-        {
-            "src": "/menuDinner",
-            "dest": "index.js",
-            "methods": ["GET"]
-        },
-        {
-            "src": "/addProductDinner",
-            "dest": "index.js",
-            "methods": ["GET"]
-        },
-        {
-            "src": "/addProductDinner/(.*)",
-            "dest": "index.js",
-            "methods": ["GET"]
-        },
-        {
-            "src": "/orders",
-            "dest": "index.js",
-            "methods": ["GET"]
-        },
-        {
-            "src": "/orders/(.*)",
-            "dest": "index.js",
-            "methods": ["GET"]
-        }
-    ],
-    "build": {
-        "env": {
-            "TOKEN": "@token",
-            "MONGOURL": "@mongourl"
-        }
-    }      
+  "version": 2,
+  "builds": [
+      {
+          "src": "index.js",
+          "use": "@now/node-server"
+      }
+  ],
+  "routes": [
+      {
+          "src": "/menuBreakfast",
+          "dest": "index.js",
+          "methods": ["GET"]
+      },
+      {
+          "src": "/addProductBreakfast",
+          "dest": "index.js",
+          "methods": ["GET", "POST"]
+      },
+      {
+          "src": "/addProductBreakfast/(.*)",
+          "dest": "index.js",
+          "methods": ["GET", "PUT", "DELETE"]
+      },
+      {
+          "src": "/menuDinner",
+          "dest": "index.js",
+          "methods": ["GET"]
+      },
+      {
+          "src": "/addProductDinner",
+          "dest": "index.js",
+          "methods": ["GET", "POST"]
+      },
+      {
+          "src": "/addProductDinner/(.*)",
+          "dest": "index.js",
+          "methods": ["GET", "PUT", "DELETE"]
+      },
+      {
+          "src": "/orders",
+          "dest": "index.js",
+          "methods": ["GET", "POST"]
+      },
+      {
+          "src": "/orders/(.*)",
+          "dest": "index.js",
+          "methods": ["GET", "PUT", "DELETE"]
+      }
+  ],
+  "build": {
+      "env": {
+          "TOKEN": "@token",
+          "MONGOURL": "@mongourl"
+      }
+  }      
 }
