@@ -8,7 +8,7 @@ const app = express();
 
 //mongoose connection to database
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.mongourl, {
+mongoose.connect(process.env.MONGOURL, {
    useNewUrlParser: true,
    useUnifiedTopology: true
 }).then(() => {
@@ -19,7 +19,7 @@ mongoose.connect(process.env.mongourl, {
 });
 
 //bodyparser setup
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //require routes

@@ -1,29 +1,57 @@
 {
-    
-        "version": 2,
-        "builds": [
-          {
+    "version": 2,
+    "builds": [
+        {
             "src": "index.js",
             "use": "@now/node-server"
-          }],
-          "routes": [
-            {
-              "src": "/menuDinner",
-              "dest": "index.js",
-              "methods": ["GET"]
-            },
-            {
-              "src": "/menuBreakfast",
-              "dest": "index.js",
-              "methods": ["GET"]
-            }
-          ]
-        ,
-        "build": {
-          "env": {
-            "token": "@token",
-            "mongourl": "@mongourl"
         }
-      }      
-  
+    ],
+    "routes": [
+        {
+            "src": "/menuBreakfast",
+            "dest": "index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/addProductBreakfast",
+            "dest": "index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/addProductBreakfast/(.*)",
+            "dest": "index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/menuDinner",
+            "dest": "index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/addProductDinner",
+            "dest": "index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/addProductDinner/(.*)",
+            "dest": "index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/orders",
+            "dest": "index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/orders/(.*)",
+            "dest": "index.js",
+            "methods": ["GET"]
+        }
+    ],
+    "build": {
+        "env": {
+            "TOKEN": "@token",
+            "MONGOURL": "@mongourl"
+        }
+    }      
 }
