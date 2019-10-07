@@ -69,7 +69,7 @@ exports.getMenuDinner = (req, res) => {
         if (req.header === process.env.TOKEN) {
             res.json(menuDinner);
         } else {
-            res.send(error);
+            res.send('you are not kawaii enough for this site');
         }     
     });
 };
