@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const mongoose = require('mongoose');
 const { menuSchema, orderSchema } = require('../models/crmModel');
 const menuBreakfast = mongoose.model('menuBreakfast', menuSchema);
@@ -64,10 +66,11 @@ exports.addNewProductDinner = (req, res) => {
 
 exports.getMenuDinner = (req, res) => {
     menuDinner.find({}, (error, menuDinner) => {
-        if (error) {
+        if (req.header === process.env.TOKEN) {
+            res.json(menuDinner);
+        } else {
             res.send(error);
-        }
-        res.json(menuDinner);
+        }     
     });
 };
 

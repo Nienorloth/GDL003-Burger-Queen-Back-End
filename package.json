@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index",
-    "deploy": "now -e MONGOURL=@mongourl"
+    "deploy": "now -e MONGOURL=@mongourl -e TOKEN=@token"
   },
   "repository": {
     "type": "git",
