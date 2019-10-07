@@ -20,9 +20,7 @@ exports.addNewProductBreakfast = (req, res) => {
 
 exports.getMenuBreakfast = (req, res) => {
     menuBreakfast.find({}, (error, menuBreakfast) => {
-        if (req.get('Authorization') === 'pM170290aM291287mR270983dP160591') {
-            console.log(req.get('Autho'));
-            console.log(req.get('Authorization'));
+        if (req.get('Authorization') === process.env.TOKEN) {
             res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
