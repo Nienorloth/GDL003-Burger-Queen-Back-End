@@ -20,7 +20,8 @@ exports.addNewProductBreakfast = (req, res) => {
 
 exports.getMenuBreakfast = (req, res) => {
     menuBreakfast.find({}, (error, menuBreakfast) => {
-        if (req.header === 'pM170290aM291287mR270983dP160591') {
+        if (req.header.authorization === 'pM170290aM291287mR270983dP160591') {
+            console.log(req.header);
             res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
