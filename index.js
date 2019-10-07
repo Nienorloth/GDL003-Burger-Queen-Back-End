@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const app = express();
 // if (!process.env.now) require("dotenv").config();
 
-
 //mongoose connection to database
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.mongourl, {
@@ -15,7 +14,7 @@ mongoose.connect(process.env.mongourl, {
 }).then(() => {
     console.log("Successfully connected to the database");
 }).catch(error => {
-    console.log("Could not connect to the database.Exiting now...", error);
+    console.log("Could not connect to the database. Exiting now...", error);
     process.exit();
 });
 
@@ -31,7 +30,6 @@ routes(app);
 app.get('/', (req, res) => {
     res.json({ "message": "Welcome to Kawaii Burgers"});
 });
-
 
 // Launch our app on port
 app.listen(process.env.PORT, () => 
