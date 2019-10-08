@@ -1,3 +1,5 @@
+const cors = require('cors');
+app.use(cors());
 require('dotenv').config();
 
 const express = require('express');
@@ -35,3 +37,4 @@ app.get('/', (req, res) => {
 app.listen(process.env.PORT, () => 
     console.log(`Your server is runing on port ${process.env.PORT}`)
  );
+ 
