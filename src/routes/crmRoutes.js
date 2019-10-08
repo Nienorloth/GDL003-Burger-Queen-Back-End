@@ -20,9 +20,9 @@ const {
 
 const routes = (app) => {
 
-    app.route('/menuBreakfast')
+    app.route('/menuBreakfast', cors())
     //GET endpoint for menuBreakfast
-    .get(getMenuBreakfast, cors());
+    .get(getMenuBreakfast);
 
     app.route('/addProductBreakfast')
     //GET and POST endpoints for addProductBreakfast
