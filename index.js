@@ -4,9 +4,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-const cors = require('cors');
-app.use(cors();
-// if (!process.env.now) require("dotenv").config();
 
 //mongoose connection to database
 mongoose.Promise = global.Promise;
