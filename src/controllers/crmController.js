@@ -20,10 +20,11 @@ exports.addNewProductBreakfast = (req, res) => {
 
 exports.getMenuBreakfast = (req, res) => {
     menuBreakfast.find({}, (error, menuBreakfast) => {
-        if (error) {
-            res.send(error);
-        }
-        res.json(menuBreakfast);
+        if (req.get('Authorization') === process.env.TOKEN) {
+            res.json(menuBreakfast);
+        } else {
+            res.send('Not authorized');
+        }     
      });
 };
 
@@ -71,10 +72,11 @@ exports.addNewProductDinner = (req, res) => {
 
 exports.getMenuDinner = (req, res) => {
     menuDinner.find({}, (error, menuDinner) => {
-        if (error) {
-            res.send(error);
-        }
-        res.json(menuDinner);
+        if (req.get('Authorization') === process.env.TOKEN) {
+            res.json(menuDinner);
+        } else {
+            res.send('Not authorized');
+        }     
      });
 };
 
@@ -122,10 +124,11 @@ exports.addNewOrder = (req, res) => {
 
 exports.getOrders = (req, res) => {
     order.find({}, (error, order) => {
-        if (error) {
-            res.send(error);
-        }
-        res.json(order);
+        if (req.get('Authorization') === process.env.TOKEN) {
+            res.json(order);
+        } else {
+            res.send('Not authorized');
+        }     
     });
 };
 
