@@ -1,5 +1,3 @@
-const cors = require('cors');
-app.use(cors());
 require('dotenv').config();
 
 const express = require('express');
@@ -30,11 +28,10 @@ routes(app);
 
 //starting the server
 app.get('/', (req, res) => {
-    res.json({ "message": "Welcome to Kawaii Burgers"});
+    res.json({ "message": "Welcome to Kawaii Burgers API"});
 });
 
 // Launch our app on port
 app.listen(process.env.PORT, () => 
     console.log(`Your server is runing on port ${process.env.PORT}`)
  );
- 
