@@ -74,7 +74,7 @@ exports.getMenuDinner = (req, res) => {
         if (error) {
             res.send(error);
         }
-        res.json(menuBreakfast);
+        res.json(menuDinner);
      });
 };
 
@@ -122,11 +122,10 @@ exports.addNewOrder = (req, res) => {
 
 exports.getOrders = (req, res) => {
     order.find({}, (error, order) => {
-        if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(order);
-        } else {
-            res.send('Not authorized');
-        }     
+        if (error) {
+            res.send(error);
+        }
+        res.json(order);
     });
 };
 
