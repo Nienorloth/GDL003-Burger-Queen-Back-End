@@ -1,3 +1,5 @@
+const cors = require('cors');
+
 const { 
     getMenuBreakfast, 
     addNewProductBreakfast, 
@@ -20,7 +22,7 @@ const routes = (app) => {
 
     app.route('/menuBreakfast')
     //GET endpoint for menuBreakfast
-    .get(getMenuBreakfast);
+    .get(getMenuBreakfast, cors());
 
     app.route('/addProductBreakfast')
     //GET and POST endpoints for addProductBreakfast
