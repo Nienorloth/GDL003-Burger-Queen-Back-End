@@ -20,11 +20,16 @@ exports.addNewProductBreakfast = (req, res) => {
 
 exports.getMenuBreakfast = (req, res) => {
     menuBreakfast.find({}, (error, menuBreakfast) => {
-        if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(menuBreakfast);
-        } else {
-            res.send('Not authorized');
+        // if (req.get('Authorization') === process.env.TOKEN) {
+        //     res.json(menuBreakfast);
+        // } else {
+        //     res.send('Not authorized');
+        // }
+        if (error) {
+            res.send(error);
         }
+        res.json(menuBreakfast);
+
     });
 };
 
@@ -72,11 +77,16 @@ exports.addNewProductDinner = (req, res) => {
 
 exports.getMenuDinner = (req, res) => {
     menuDinner.find({}, (error, menuDinner) => {
-        if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(menuDinner);
-        } else {
-            res.send('Not authorized');
+        // if (req.get('Authorization') === process.env.TOKEN) {
+        //     res.json(menuDinner);
+        // } else {
+        //     res.send('Not authorized');
+        // }
+        if (error) {
+            res.send(error);
         }
+        res.json(menuDinner);
+
     });
 };
 
@@ -114,21 +124,31 @@ exports.addNewOrder = (req, res) => {
     let newOrder = new order(req.body);
 
     newOrder.save((error, order) => {
-        if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(order);
-        } else {
-            res.send('Not authorized');
-        }  
+        // if (req.get('Authorization') === process.env.TOKEN) {
+        //     res.json(order);
+        // } else {
+        //     res.send('Not authorized');
+        // }  
+        if (error) {
+            res.send(error);
+        }
+        res.json(order);
+
     });
 };
 
 exports.getOrders = (req, res) => {
     order.find({}, (error, order) => {
-        if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(order);
-        } else {
-            res.send('Not authorized');
+        // if (req.get('Authorization') === process.env.TOKEN) {
+        //     res.json(order);
+        // } else {
+        //     res.send('Not authorized');
+        // }
+        if (error) {
+            res.send(error);
         }
+        res.json(order);
+
     });
 };
 
