@@ -1,4 +1,5 @@
-const cors = require('cors');
+// const cors = require('cors');
+// app.use(cors());
 
 const { 
     getMenuBreakfast, 
@@ -18,7 +19,6 @@ const {
     deleteOrderID, 
 } = require('../controllers/crmController');
 
-app.use(cors());
 
 const routes = (app) => {
 
