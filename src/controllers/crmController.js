@@ -1,10 +1,12 @@
 require('dotenv').config();
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 const { menuSchema, orderSchema } = require('../models/crmModel');
 const menuBreakfast = mongoose.model('menuBreakfast', menuSchema);
 const menuDinner = mongoose.model('menuDinner', menuSchema);
 const order = mongoose.model('order', orderSchema);
+app.use(cors({ Access-Control-Allow-Origin: * }));
 
 exports.addNewProductBreakfast = (req, res) => {
     let newProductB = new menuBreakfast(req.body);
