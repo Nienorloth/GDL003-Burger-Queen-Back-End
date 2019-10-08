@@ -22,7 +22,7 @@ app.use(cors());
 
 const routes = (app) => {
 
-    app.route('/menuBreakfast', cors())
+    app.route('/menuBreakfast')
     //GET endpoint for menuBreakfast
     .get(getMenuBreakfast);
 
