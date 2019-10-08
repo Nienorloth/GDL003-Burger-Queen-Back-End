@@ -18,9 +18,11 @@ const {
     deleteOrderID, 
 } = require('../controllers/crmController');
 
+app.use(cors());
+
 const routes = (app) => {
 
-    app.route('/menuBreakfast')
+    app.route('/menuBreakfast', cors())
     //GET endpoint for menuBreakfast
     .get(getMenuBreakfast);
 
