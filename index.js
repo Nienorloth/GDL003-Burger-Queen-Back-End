@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGOURL, {
     console.log("Could not connect to the database. Exiting now...", error);
     process.exit();
 });
-app.use(cors());
+app.use(cors(corsOptions));
 
 //bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,7 +32,7 @@ const routes = require('./src/routes/crmRoutes');
 routes(app);
 
 //starting the server
-app.get('/', cors(corsOptions), (req, res) => {
+app.get('/', (req, res) => {
     res.json({ "message": "Welcome to Kawaii Burgers API"});
 });
 
