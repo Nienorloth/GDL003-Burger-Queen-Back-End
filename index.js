@@ -26,7 +26,7 @@ const routes = require('./src/routes/crmRoutes');
 routes(app);
 
 //starting the server
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
     res.json({ "message": "Welcome to Kawaii Burgers API"});
 });
 
