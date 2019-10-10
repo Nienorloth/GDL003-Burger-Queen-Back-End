@@ -25,6 +25,7 @@ exports.addNewProductBreakfast = (req, res) => {
 exports.getMenuBreakfast = (req, res) => {
     menuBreakfast.find({}, (error, menuBreakfast) => {
         if (req.get('Authorization') === process.env.TOKEN) {
+            res.set('Access-Control-Allow-Origin', '*')
             res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
