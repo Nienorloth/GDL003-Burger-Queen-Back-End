@@ -10,7 +10,7 @@
       {
           "src": "/menuBreakfast",
           "dest": "index.js",
-          "methods": ["GET"],
+          "methods": ["GET"]
       },
       {
           "src": "/addProductBreakfast",
