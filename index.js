@@ -13,7 +13,7 @@ const corsOptions = {
 }
 //mongoose connection to database
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGOURL, {
+mongoose.connect('mongodb+srv://admin:4T7HwVnZsLbls6ey@kawaiiburger-hk9yw.mongodb.net/kawaii?retryWrites=true&w=majority', {
    useNewUrlParser: true,
    useUnifiedTopology: true
 }).then(() => {
@@ -38,5 +38,5 @@ app.get('/', (req, res) => {
 
 // Launch our app on port
 app.listen(process.env.PORT, () => 
-    console.log(`Your server is runing on port ${process.env.PORT}`)
+    console.log(`Your server is runing on port ${8080}`)
  );
