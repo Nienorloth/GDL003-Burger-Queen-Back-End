@@ -5,6 +5,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 
+const corsOptions = {
+    origin: '*',
+    optionSuccessStatus: 200,
+    methods: 'GET, HEAD, PUT, POST, DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+}
 //mongoose connection to database
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGOURL, {

@@ -15,6 +15,10 @@ exports.addNewProductBreakfast = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuBreakfast);
     });
 };
 
@@ -25,6 +29,10 @@ exports.getMenuBreakfast = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuBreakfast);
     });
 };
 
@@ -35,6 +43,10 @@ exports.getProductIDBreakfast = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuBreakfast);
     });
 };
 
@@ -45,6 +57,11 @@ exports.editProductIDBreakfast = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(order);
+
     });
 };
 
@@ -55,6 +72,10 @@ exports.deleteProductIDBreakfast = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuBreakfast);
     });
 };
 
@@ -67,6 +88,10 @@ exports.addNewProductDinner = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuDinner);
     });
 };
 
@@ -77,6 +102,10 @@ exports.getMenuDinner = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuDinner);
     });
 };
 
@@ -87,6 +116,10 @@ exports.getProductIDDinner = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuDinner);
     });
 };
 
@@ -97,6 +130,10 @@ exports.editProductIDDinner = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuDinner);
     });
 };
 
@@ -107,6 +144,10 @@ exports.deleteProductIDDinner = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json({ message: "Product has been succesfully deleted" });
     });
 };
 
@@ -119,6 +160,10 @@ exports.addNewOrder = (req, res) => {
         } else {
             res.send('Not authorized');
         }  
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(order);
     });
 };
 
@@ -129,6 +174,10 @@ exports.getOrders = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(order);
     });
 };
 
@@ -139,6 +188,10 @@ exports.getOrderID = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(order);    
     });
 };
 
@@ -149,6 +202,10 @@ exports.editOrderID = (req, res) => {
         } else {
             res.send('Not authorized');
         }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(order);
     });
 };
 
@@ -158,6 +215,10 @@ exports.deleteOrderID = (req, res) => {
             res.json({ message: "Order has been succesfully deleted" });
         } else {
             res.send('Not authorized');
-        }     
+        } 
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(order);    
     });
 };
