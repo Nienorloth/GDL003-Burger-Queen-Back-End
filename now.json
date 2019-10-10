@@ -1,17 +1,4 @@
 {
-  "static": {
-    "headers": [
-      {
-        "source": "**",
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ]
-      }
-    ]
-  
   "version": 2,
   "builds": [
       {
@@ -24,11 +11,15 @@
           "src": "/menuBreakfast",
           "dest": "index.js",
           "methods": ["GET"],
-          "headers": {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
-            "Access-Control-Allow-Headers": "Authorization, Content-Type, Accept"
-        }
+          "headers": [{
+            "source": "**",
+            "headers": [
+              {
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+        }]
       },
       {
           "src": "/addProductBreakfast",
@@ -107,5 +98,4 @@
           "MONGOURL": "@mongourl"
       }
   }
-}
 }
