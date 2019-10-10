@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "deploy": "now -e MONGOURL=@mongourl -e TOKEN=@token"
   },
   "repository": {
     "type": "git",
