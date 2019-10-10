@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGOURL, {
     console.log("Could not connect to the database. Exiting now...", error);
     process.exit();
 });
-app.use(cors(corsOptions));
+app.use(cors());
 
 //bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
