@@ -19,7 +19,9 @@ exports.orderSchema = mongoose.Schema({
     table: {
         type: Number
     },
-    dishes: [dish{type: String}],
+    dishes: {
+        type: Array
+    },
     total: {
         type: Number
     }, 
