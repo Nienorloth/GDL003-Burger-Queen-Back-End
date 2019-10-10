@@ -11,7 +11,7 @@
           "src": "/menuBreakfast",
           "dest": "index.js",
           "methods": ["GET"],
-          "headers": [{
+          "headers": {
             "source": "**",
             "headers": [
               {
@@ -19,7 +19,7 @@
                 "value": "*"
               }
             ]
-        }]
+        }
       },
       {
           "src": "/addProductBreakfast",
