@@ -11,17 +11,17 @@
           "src": "/menuBreakfast",
           "dest": "index.js",
           "methods": ["GET"],
-            "headers": [
+            "headers": 
               {
                 "source": "**",
-                "headers": [
+                "headers": 
                   {
                     "key": "Access-Control-Allow-Origin",
                     "value": "*"
                   }
-                ]
+                
               }
-            ]
+            
           
       },
       {
@@ -48,17 +48,17 @@
           "src": "/menuDinner",
           "dest": "index.js",
           "methods": ["GET"],
-            "headers": [
+            "headers": 
               {
                 "source": "**",
-                "headers": [
+                "headers": 
                   {
                     "key": "Access-Control-Allow-Origin",
                     "value": "*"
                   }
-                ]
+                
               }
-            ]
+            
           
       },
       {
