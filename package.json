@@ -4,7 +4,7 @@
   "description": "Sistema de comandas para restaurante de hamburguesas Kawaii Burger",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
