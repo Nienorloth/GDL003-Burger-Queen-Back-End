@@ -41,11 +41,11 @@
           "src": "/menuDinner",
           "dest": "index.js",
           "methods": ["GET"],
-          "headers": 
-          {
-                "key": "Access-Control-Allow-Origin",
-                "value": "*"
-              }
+          "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+            "Access-Control-Allow-Headers": "Authorization, Content-Type, Accept"
+        }
   },
       {
           "src": "/addProductDinner",
