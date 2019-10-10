@@ -41,19 +41,12 @@
           "src": "/menuDinner",
           "dest": "index.js",
           "methods": ["GET"],
-            "headers": 
-              {
-                "source": "**",
-                "headers": 
-                  {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                  }
-                
+          "headers": 
+          {
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
               }
-            
-          
-      },
+  },
       {
           "src": "/addProductDinner",
           "dest": "index.js",
