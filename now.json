@@ -11,7 +11,7 @@
           "src": "/menuBreakfast",
           "dest": "index.js",
           "methods": ["GET"],
-          "status": 0,
+          "status": 100,
           "headers": {
                 "key": "Access-Control-Allow-Origin",
                 "value": "*"
