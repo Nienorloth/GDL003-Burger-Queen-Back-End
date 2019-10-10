@@ -1,7 +1,7 @@
 {
-  "name": "gdl003-burger-queen-back-end",
+  "name": "Kawaii Burger API",
   "version": "1.0.0",
-  "description": "Sistema de comandas para restaurant de hamburguesas Kawaii Burger",
+  "description": "Sistema de comandas para restaurante de hamburguesas Kawaii Burger",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index",
@@ -16,6 +16,7 @@
     "RestAPI",
     "MongoDB",
     "Mongoose"
+    "heroku"
   ],
   "author": "Mariana Rascón & Denisse Peralta",
   "license": "ISC",
@@ -37,5 +38,8 @@
     "babel-preset-es": "^1.0.0",
     "babel-preset-stage-0": "^6.24.1",
     "dotenv": "^8.1.0"
+  },
+  "engines": {
+    "node": "10.15.1"
   }
 }
