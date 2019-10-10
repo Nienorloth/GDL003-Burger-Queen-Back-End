@@ -11,11 +11,18 @@
           "src": "/menuBreakfast",
           "dest": "index.js",
           "methods": ["GET"],
-          "headers": [{
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-        }]
-      },
+          "headers": [
+            {
+            "source": "**",
+            "headers": [
+              {
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
+        }
+      ]
+    }
+  ]
+  },
       {
           "src": "/addProductBreakfast",
           "dest": "index.js",
