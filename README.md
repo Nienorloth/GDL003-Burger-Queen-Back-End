@@ -25,30 +25,24 @@ La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
 
 ## Los esquemas definidos son:
 * menudinners, menubreakfast:
-    id: {
+    * id: {
         type: Number
     }, 
-    img: {
+    * img: {
         type: String
     },
-    dish: {
+    * dish: {
         type: String
     },
-    price: {
+    * price: {
         type: Number
     }
 
  * orders:
-    table: {
-        type: Number
-    },
-    dishes: {
-        type: String
-    },
-    total: {
-        type: Number
-    }, 
-    created_date: {
+    * table: Number,
+    * dishes: [ ],
+    * total: Number, 
+    * created_date: {
         type: Date,
         default: Date.now
     }
