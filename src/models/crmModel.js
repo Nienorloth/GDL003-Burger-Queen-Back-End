@@ -19,6 +19,7 @@ exports.orderSchema = mongoose.Schema({
     table: Number,
     dishes: [ ],
     total: Number,
+    active: Number,
     created_date: {
         type: Date,
         default: Date.now

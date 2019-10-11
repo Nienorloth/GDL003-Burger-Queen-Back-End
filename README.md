@@ -1,52 +1,60 @@
 # Burger Kawaii API
 ![Kawaii-burger](https://i.ibb.co/j86FS6q/Burguer-Kawaii.png)
 
-Restful API para el sistema de comandas del restaurante Burger Kawaii, desplegado en heroku en la URL (https://pacific-sands-67249.herokuapp.com/). Se utilizó la base de datos de mongo DB Atlas, con 3 colecciones: menudinners, menubreakfasts y orders. 
+Restful API para el sistema de comandas del restaurante Burger Kawaii, desplegado en heroku en la URL (https://pacific-sands-67249.herokuapp.com/). Se utilizó el modelo MVC para crear el boiler plate de la aplicación, así como la base de datos de mongo DB Atlas, con 3 colecciones: menudinners, menubreakfasts y orders. 
 
 ## Token de autorización
-Se ha establecido un Token para poder acceder a los datos de la API y es indispensable que el mismo llegué por un Header de Authorization. headers: { Authorization: "token"}.
 
-## Endpoints
+La conexión está protegida por un token que debe ser agregado como header de autorización en cada petición para poder acceder: { Authorization: "token"}.
+
+##Endpoints
+
 La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
 
 * /menuBreakfast 
-    * Métodos: GET.
+    Métodos: GET.
 * /addProductBreakfast
-    * Métodos: GET, POST.
+    Métodos: GET, POST.
 * /addProductBreakfast/:productId
-    * Métodos: GET, PUT, DELETE.
+    Métodos: GET, PUT, DELETE.
 *  /menuDinner
-    * Métodos: GET.
+    Métodos: GET.
 * /addProductDinner
-    * Métodos: GET, POST.
+    Métodos: GET, POST.
 * /addProductDinner/:productId
-    * Métodos: GET, PUT, DELETE
+    Métodos: GET, PUT, DELETE
 * /orders
-    * Métodos: GET, POST.
+    Métodos: GET, POST.
 * /orders/:orderId
-    * Métodos: GET, PUT, DELETE.
+    Métodos: GET, PUT, DELETE.
 
 
-## Los esquemas definidos son:
+##Los esquemas definidos son:
 * menudinners, menubreakfast:
-    * id: {
+    id: {
         type: Number
     }, 
-    * img: {
+    img: {
         type: String
     },
-    * dish: {
+    dish: {
         type: String
     },
-    * price: {
+    price: {
         type: Number
     }
 
  * orders:
-    * table: Number,
-    * dishes: [ ],
-    * total: Number, 
-    * created_date: {
+    table: {
+        type: Number
+    },
+    dishes: {
+        type: Array
+    },
+    total: {
+        type: Number
+    }, 
+    created_date: {
         type: Date,
         default: Date.now
     }
