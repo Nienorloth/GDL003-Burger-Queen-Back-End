@@ -1,14 +1,14 @@
 # Burger Kawaii API
 ![Kawaii-burger](https://i.ibb.co/j86FS6q/Burguer-Kawaii.png)
 
-Restful API para el sistema de comandas del restaurante Burger Kawaii, desplegado en heroku en la URL (https://pacific-sands-67249.herokuapp.com/). Se utilizó la base de datos de mongo DB Atlas, con 3 colecciones: menudinners, menubreakfasts y orders. 
+Restful API para el sistema de comandas del restaurante Burger Kawaii, desplegado en heroku en la URL (https://pacific-sands-67249.herokuapp.com/). Se utilizó el modelo MVC para crear el boiler plate de la aplicación, así como la base de datos de mongo DB Atlas, con 3 colecciones: menudinners, menubreakfasts y orders. 
 
 ## Token de autorización
-Se ha establecido un Token para poder acceder a los datos de la API y es indispensable que el mismo llegué por un Header de Authorization. headers: { Authorization: "token"}.
 
-La conexión está protegida por un token que debe ser agregado como header de autorización en cada petición para poder acceder: Authorization: <type> <credentials>
+La conexión está protegida por un token que debe ser agregado como header de autorización en cada petición para poder acceder: { Authorization: "token"}.
 
 ##Endpoints
+
 La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
 
 * /menuBreakfast 
@@ -49,7 +49,7 @@ La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
         type: Number
     },
     dishes: {
-        type: String
+        type: Array
     },
     total: {
         type: Number
