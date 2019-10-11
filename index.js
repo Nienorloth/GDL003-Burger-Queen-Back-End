@@ -16,7 +16,10 @@ mongoose.connect(process.env.MONGOURL, {
     console.log("Could not connect to the database. Exiting now...", error);
     process.exit();
 });
+
+//require cors
 app.use(cors());
+
 //bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
