@@ -16,15 +16,9 @@ exports.menuSchema = mongoose.Schema({
 });
 
 exports.orderSchema = mongoose.Schema({
-    table: {
-        type: Number
-    },
-    dishes: {
-        type: Array
-    },
-    total: {
-        type: Number
-    }, 
+    table: Number,
+    dishes: [ ],
+    total: Number,
     created_date: {
         type: Date,
         default: Date.now
