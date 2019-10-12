@@ -15,6 +15,10 @@ const {
     getOrderID, 
     editOrderID, 
     deleteOrderID, 
+    addUser,
+    getUser,
+    getUserID,
+    deleteUserID
 } = require('../controllers/crmController');
 
 
@@ -65,6 +69,17 @@ const routes = (app) => {
     .get(getOrderID)
     .put(editOrderID)
     .delete(deleteOrderID);
+
+    app.route('/user')
+    //GET and POST endpoints for user
+    .get(getUser)
+    .post(addUser);
+
+    //GET PUT DELETE endpoints for specific ID user
+    app.route("/user/:userId")
+    .get(getUserID)
+    .delete(deleteUserID);
+
 }
 
 module.exports = routes;
