@@ -16,7 +16,6 @@ exports.menuSchema = mongoose.Schema({
 });
 
 exports.orderSchema = mongoose.Schema({
-    user: String,
     table: Number,
     dishes: [ ],
     total: Number,
@@ -26,9 +25,3 @@ exports.orderSchema = mongoose.Schema({
         default: Date.now
     }
 });
-
-exports.userSchema = mongoose.Schema({
-    user: String
-});
- 
-
