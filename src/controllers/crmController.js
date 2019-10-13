@@ -227,57 +227,57 @@ exports.deleteOrderID = (req, res) => {
         let newUser = new user(req.body);
     
         newUser.save((error, user) => {
-            if (req.get('Authorization') === process.env.TOKEN) {
-                res.json(user);
-            } else {
-                res.send('Not authorized');
-            }  
-            // if (error) {
-            //     res.send(error);
-            // }
-            // res.json(user);
+            // if (req.get('Authorization') === process.env.TOKEN) {
+            //     res.json(user);
+            // } else {
+            //     res.send('Not authorized');
+            // }  
+            if (error) {
+                res.send(error);
+            }
+            res.json(user);
         });
     };
     
     exports.getUser = (req, res) => {
         user.find({}, (error, user) => {
-            if (req.get('Authorization') === process.env.TOKEN) {
-                res.json(user);
-            } else {
-                res.send('Not authorized');
-            }
-            // if (error) {
-            //     res.send(error);
+            // if (req.get('Authorization') === process.env.TOKEN) {
+            //     res.json(user);
+            // } else {
+            //     res.send('Not authorized');
             // }
-            // res.json(user);
+            if (error) {
+                res.send(error);
+            }
+            res.json(user);
         });
     };
     
     exports.getUserID = (req, res) => {
         user.findById(req.params.userId, (error, user) => {
-            if (req.get('Authorization') === process.env.TOKEN) {
-                res.json(user);
-            } else {
-                res.send('Not authorized');
-            }
-            // if (error) {
-            //     res.send(error);
+            // if (req.get('Authorization') === process.env.TOKEN) {
+            //     res.json(user);
+            // } else {
+            //     res.send('Not authorized');
             // }
-            // res.json(user);    
+            if (error) {
+                res.send(error);
+            }
+            res.json(user);    
         });
     };
         
     exports.deleteUserID = (req, res) => {
         user.remove({_id: req.params.userId}, (error, user) => {
-            if (req.get('Authorization') === process.env.TOKEN) {
-                res.json({ message: "user has loged out" });
-            } else {
-                res.send('Not authorized');
-            } 
-            // if (error) {
-            //     res.send(error);
-            // }
-            // res.json(user);    
+            // if (req.get('Authorization') === process.env.TOKEN) {
+            //     res.json({ message: "user has loged out" });
+            // } else {
+            //     res.send('Not authorized');
+            // } 
+            if (error) {
+                res.send(error);
+            }
+            res.json(user);    
         });
     
 };
