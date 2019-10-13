@@ -28,11 +28,7 @@ exports.orderSchema = mongoose.Schema({
 });
 
 exports.userSchema = mongoose.Schema({
-    user: String,
-    created_date: {
-        type: Date,
-        default: Date.now
-    }
+    user: String
 });
  
 
