@@ -7,7 +7,7 @@ Restful API para el sistema de comandas del restaurante Burger Kawaii, desplegad
 
 La conexión está protegida por un token que debe ser agregado como header de autorización en cada petición para poder acceder: { Authorization: "token"}.
 
-##Endpoints
+## Endpoints
 
 La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
 
@@ -29,7 +29,7 @@ La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
     Métodos: GET, PUT, DELETE.
 
 
-##Los esquemas definidos son:
+## Los esquemas definidos son:
 * menudinners, menubreakfast:
     id: {
         type: Number
@@ -58,6 +58,17 @@ La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
         type: Date,
         default: Date.now
     }
+
+## Aplicación Front-end:
+Nuestra restful API fue creada para la aplicación web [Burger Kawaii](https://paulinamontoya.github.io/burger-kawaii/).
+
+## Integrantes del proyecto:
+### `Front-end`
+* Andrea Magallanes
+* Paulina Montoya
+### `Back-end`
+* Denisse Peralta
+* Mariana Rascón
 
 ## Recursos utilizados:
 
