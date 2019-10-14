@@ -37,7 +37,7 @@ La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
     *  img: {
         type: String
     },
-    * 0dish: {
+    * dish: {
         type: String
     },
     * price: {
@@ -63,10 +63,10 @@ La URL contiene las siguientes rutas con sus respectivos métodos habilitados:
 Nuestra restful API fue creada para la aplicación web [Burger Kawaii](https://paulinamontoya.github.io/burger-kawaii/).
 
 ## Integrantes del proyecto:
-### `Front-end`
+#### `Front-end`
 * Andrea Magallanes
 * Paulina Montoya
-### `Back-end`
+#### `Back-end`
 * Denisse Peralta
 * Mariana Rascón
 
