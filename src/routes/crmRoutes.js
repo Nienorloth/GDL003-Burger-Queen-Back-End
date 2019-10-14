@@ -1,3 +1,4 @@
+
 const { 
     getMenuBreakfast, 
     addNewProductBreakfast, 
@@ -14,6 +15,10 @@ const {
     getOrderID, 
     editOrderID, 
     deleteOrderID, 
+    addUser,
+    getUser,
+    getUserID,
+    deleteUserID
 } = require('../controllers/crmController');
 
 
@@ -41,8 +46,7 @@ const routes = (app) => {
     app.route('/addProductDinner')
     //GET and POST endpoints for addProductDinner
     .get((req, res, next) => {
-        //middleware
-        console.log(`Request from: ${req.originalUrl}`)
+        //middleware        console.log(`Request from: ${req.originalUrl}`)
         console.log(`Request type: ${req.method}`)
         next();
     }, getMenuDinner)
@@ -64,6 +68,17 @@ const routes = (app) => {
     .get(getOrderID)
     .put(editOrderID)
     .delete(deleteOrderID);
+
+    app.route('/user')
+    //GET and POST endpoints for user
+    .get(getUser)
+    .post(addUser);
+
+    //GET PUT DELETE endpoints for specific ID user
+    app.route("/user/:userId")
+    .get(getUserID)
+    .delete(deleteUserID);
+
 }
 
 module.exports = routes;

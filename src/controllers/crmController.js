@@ -1,10 +1,11 @@
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const { menuSchema, orderSchema } = require('../models/crmModel');
+const { menuSchema, orderSchema, userSchema } = require('../models/crmModel');
 const menuBreakfast = mongoose.model('menuBreakfast', menuSchema);
 const menuDinner = mongoose.model('menuDinner', menuSchema);
 const order = mongoose.model('order', orderSchema);
+const user = mongoose.model('user', userSchema);
 
 exports.addNewProductBreakfast = (req, res) => {
     let newProductB = new menuBreakfast(req.body);
@@ -221,4 +222,62 @@ exports.deleteOrderID = (req, res) => {
         // }
         // res.json(order);    
     });
-};
+
+    exports.addUser = (req, res) => {
+        let newUser = new user(req.body);
+    
+        newUser.save((error, user) => {
+            // if (req.get('Authorization') === process.env.TOKEN) {
+            //     res.json(user);
+            // } else {
+            //     res.send('Not authorized');
+            // }  
+            if (error) {
+                res.send(error);
+            }
+            res.json(user);
+        });
+    };
+    
+    exports.getUser = (req, res) => {
+        user.find({}, (error, user) => {
+            // if (req.get('Authorization') === process.env.TOKEN) {
+            //     res.json(user);
+            // } else {
+            //     res.send('Not authorized');
+            // }
+            if (error) {
+                res.send(error);
+            }
+            res.json(user);
+        });
+    };
+    
+    exports.getUserID = (req, res) => {
+        user.findById(req.params.userId, (error, user) => {
+            // if (req.get('Authorization') === process.env.TOKEN) {
+            //     res.json(user);
+            // } else {
+            //     res.send('Not authorized');
+            // }
+            if (error) {
+                res.send(error);
+            }
+            res.json(user);    
+        });
+    };
+        
+    exports.deleteUserID = (req, res) => {
+        user.remove({_id: req.params.userId}, (error, user) => {
+            // if (req.get('Authorization') === process.env.TOKEN) {
+            //     res.json({ message: "user has loged out" });
+            // } else {
+            //     res.send('Not authorized');
+            // } 
+            if (error) {
+                res.send(error);
+            }
+            res.json(user);    
+        });
+    
+}
