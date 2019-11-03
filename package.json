@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nienorloth/GDL003-Burger-Queen-Back-End.git"
+    "url": "git+https://github.com/Nienorloth/GDL003-personal-project.git"
   },
   "keywords": [
     "Express",
@@ -20,9 +20,9 @@
   "author": "Mariana Rascón",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Nienorloth/GDL003-Burger-Queen-Back-End/issues"
+    "url": "https://github.com/Nienorloth/GDL003-Burger-personal-project/issues"
   },
-  "homepage": "https://pacific-sands-67249.herokuapp.com",
+  "homepage": "https://floating-savannah-95962.herokuapp.com/",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
