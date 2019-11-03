@@ -7,7 +7,7 @@ const app = express();
 
 //mongoose connection to database
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGOURL, {
+mongoose.connect(mongodb+srv: '//admin:<password>@cluster0-svopf.mongodb.net/Imparatus?retryWrites=true&w=majority', {
    useNewUrlParser: true,
    useUnifiedTopology: true
 }).then(() => {
