@@ -1,5 +1,5 @@
 {
-  "name": "gdl003-burger-queen-back-end",
+  "name": "Imparatus-back-end",
   "version": "1.0.0",
   "description": "Sistema de comandas para restaurante de hamburguesas Kawaii Burger",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "Mongoose",
     "heroku"
   ],
-  "author": "Mariana Rascón & Denisse Peralta",
+  "author": "Mariana Rascón",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Nienorloth/GDL003-Burger-Queen-Back-End/issues"

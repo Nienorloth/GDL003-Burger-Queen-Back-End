@@ -1,14 +1,9 @@
 const { 
-    getMenuBreakfast, 
-    addNewProductBreakfast, 
-    getProductIDBreakfast, 
-    editProductIDBreakfast, 
-    deleteProductIDBreakfast, 
-    getMenuDinner, 
-    addNewProductDinner, 
-    getProductIDDinner, 
-    editProductIDDinner, 
-    deleteProductIDDinner, 
+    getProducts, 
+    addNewProduct, 
+    getProductID, 
+    editProductID, 
+    deleteProductID, 
     getOrders, 
     addNewOrder, 
     getOrderID, 
@@ -19,40 +14,20 @@ const {
 
 const routes = (app) => {
 
-    app.route('/menuBreakfast')
+    app.route('/products')
     //GET endpoint for menuBreakfast
-    .get(getMenuBreakfast);
+    .get(getProducts);
 
-    app.route('/addProductBreakfast')
+    app.route('/addProduct')
     //GET and POST endpoints for addProductBreakfast
-    .get(getMenuBreakfast)
-    .post(addNewProductBreakfast);
+    .get(getProducts)
+    .post(addNewProduct);
 
-    app.route("/addProductBreakfast/:productId")
+    app.route('/products/:productId')
     //GET PUT DELETE endpoints for specific ID product
-    .get(getProductIDBreakfast)
-    .put(editProductIDBreakfast)
-    .delete(deleteProductIDBreakfast);
-
-    app.route('/menuDinner')
-    //GET endpoint for menuDinner
-    .get(getMenuDinner);
-
-    app.route('/addProductDinner')
-    //GET and POST endpoints for addProductDinner
-    .get((req, res, next) => {
-        //middleware
-        console.log(`Request from: ${req.originalUrl}`)
-        console.log(`Request type: ${req.method}`)
-        next();
-    }, getMenuDinner)
-    .post(addNewProductDinner);
-
-    app.route("/addProductDinner/:productId")
-    //GET PUT DELETE endpoints for specific ID product
-    .get(getProductIDDinner)
-    .put(editProductIDDinner)
-    .delete(deleteProductIDDinner);
+    .get(getProductID)
+    .put(editProductID)
+    .delete(deleteProductID);
 
     app.route('/orders')
     //GET and POST endpoints for orders
@@ -60,7 +35,7 @@ const routes = (app) => {
     .post(addNewOrder);
 
     //GET PUT DELETE endpoints for specific ID order
-    app.route("/orders/:orderId")
+    app.route('/orders/:orderId')
     .get(getOrderID)
     .put(editOrderID)
     .delete(deleteOrderID);
