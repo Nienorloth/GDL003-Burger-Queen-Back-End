@@ -29,7 +29,7 @@ routes(app);
 
 //starting the server
 app.get('/', (req, res) => {
-    res.json({ "message": "Imparatus API"});
+    res.json({ "message": "Welcome to Kawaii Burgers API"});
 });
 
 // Launch our app on port

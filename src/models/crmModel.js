@@ -1,26 +1,25 @@
 const mongoose = require('mongoose');
 
-exports.productsSchema = mongoose.Schema({
+exports.menuSchema = mongoose.Schema({
     id: {
         type: Number
     }, 
     img: {
         type: String
     },
-    title: {
+    dish: {
         type: String
     },
     price: {
         type: Number
-    },
-    description: {
-        type: String
     }
 });
 
 exports.orderSchema = mongoose.Schema({
-    products: [ ],
+    table: Number,
+    dishes: [ ],
     total: Number,
+    active: Number,
     created_date: {
         type: Date,
         default: Date.now

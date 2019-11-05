@@ -1,58 +1,59 @@
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const { productsSchema, orderSchema } = require('../models/crmModel');
-const products = mongoose.model('Product', productsSchema);
-const order = mongoose.model('Order', orderSchema);
+const { menuSchema, orderSchema } = require('../models/crmModel');
+const menuBreakfast = mongoose.model('menuBreakfast', menuSchema);
+const menuDinner = mongoose.model('menuDinner', menuSchema);
+const order = mongoose.model('order', orderSchema);
 
-exports.addNewProduct = (req, res) => {
-    let newProductB = new products(req.body);
+exports.addNewProductBreakfast = (req, res) => {
+    let newProductB = new menuBreakfast(req.body);
 
-    newProductB.save((error, products) => {
+    newProductB.save((error, menuBreakfast) => {
         if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(products);
+            res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
         }
         // if (error) {
         //     res.send(error);
         // }
-        // res.json(products);
+        // res.json(menuBreakfast);
     });
 };
 
-exports.getProducts = (req, res) => {
-    products.find({}, (error, products) => {
+exports.getMenuBreakfast = (req, res) => {
+    menuBreakfast.find({}, (error, menuBreakfast) => {
         if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(products);
+            res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
         }
         // if (error) {
         //     res.send(error);
         // }
-        // res.json(products);
+        // res.json(menuBreakfast);
     });
 };
 
-exports.getProductID = (req, res) => {
-    products.findById(req.params.productId, (error, products) => {
+exports.getProductIDBreakfast = (req, res) => {
+    menuBreakfast.findById(req.params.productId, (error, menuBreakfast) => {
         if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(products);
+            res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
         }
         // if (error) {
         //     res.send(error);
         // }
-        // res.json(products);
+        // res.json(menuBreakfast);
     });
 };
 
-exports.editProductID = (req, res) => {
-       products.findOneAndUpdate({_id: req.params.productId}, req.body, { new: true}, (error, products) => {
+exports.editProductIDBreakfast = (req, res) => {
+    menuBreakfast.findOneAndUpdate({_id: req.params.productId}, req.body, { new: true}, (error, menuBreakfast) => {
         if (req.get('Authorization') === process.env.TOKEN) {
-            res.json(products);
+            res.json(menuBreakfast);
         } else {
             res.send('Not authorized');
         }
@@ -64,8 +65,8 @@ exports.editProductID = (req, res) => {
     });
 };
 
-exports.deleteProductID = (req, res) => {
-    products.remove({_id: req.params.productId}, (error, products) => {
+exports.deleteProductIDBreakfast = (req, res) => {
+    menuBreakfast.remove({_id: req.params.productId}, (error, menuBreakfast) => {
         if (req.get('Authorization') === process.env.TOKEN) {
             res.json({ message: "Product has been succesfully deleted" });
         } else {
@@ -74,10 +75,81 @@ exports.deleteProductID = (req, res) => {
         // if (error) {
         //     res.send(error);
         // }
-        // res.json(products);
+        // res.json(menuBreakfast);
     });
 };
 
+exports.addNewProductDinner = (req, res) => {
+    let newProductD = new menuDinner(req.body);
+
+    newProductD.save((error, menuDinner) => {
+        if (req.get('Authorization') === process.env.TOKEN) {
+            res.json(menuDinner);
+        } else {
+            res.send('Not authorized');
+        }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuDinner);
+    });
+};
+
+exports.getMenuDinner = (req, res) => {
+    menuDinner.find({}, (error, menuDinner) => {
+        if (req.get('Authorization') === process.env.TOKEN) {
+            res.json(menuDinner);
+        } else {
+            res.send('Not authorized');
+        }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuDinner);
+    });
+};
+
+exports.getProductIDDinner = (req, res) => {
+    menuDinner.findById(req.params.productId, (error, menuDinner) => {
+        if (req.get('Authorization') === process.env.TOKEN) {
+            res.json(menuDinner);
+        } else {
+            res.send('Not authorized');
+        }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuDinner);
+    });
+};
+
+exports.editProductIDDinner = (req, res) => {
+    menuDinner.findOneAndUpdate({_id: req.params.productId}, req.body, { new: true}, (error, menuDinner) => {
+        if (req.get('Authorization') === process.env.TOKEN) {
+            res.json(menuDinner);
+        } else {
+            res.send('Not authorized');
+        }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json(menuDinner);
+    });
+};
+
+exports.deleteProductIDDinner = (req, res) => {
+    menuDinner.remove({_id: req.params.productId}, (error, menuDinner) => {
+        if (req.get('Authorization') === process.env.TOKEN) {
+            res.json({ message: "Product has been succesfully deleted" });
+        } else {
+            res.send('Not authorized');
+        }
+        // if (error) {
+        //     res.send(error);
+        // }
+        // res.json({ message: "Product has been succesfully deleted" });
+    });
+};
 
 exports.addNewOrder = (req, res) => {
     let newOrder = new order(req.body);

@@ -1,5 +1,5 @@
 {
-  "name": "Imparatus-back-end",
+  "name": "gdl003-burger-queen-back-end",
   "version": "1.0.0",
   "description": "Sistema de comandas para restaurante de hamburguesas Kawaii Burger",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nienorloth/GDL003-personal-project.git"
+    "url": "git+https://github.com/Nienorloth/GDL003-Burger-Queen-Back-End.git"
   },
   "keywords": [
     "Express",
@@ -17,12 +17,12 @@
     "Mongoose",
     "heroku"
   ],
-  "author": "Mariana Rascón",
+  "author": "Mariana Rascón & Denisse Peralta",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Nienorloth/GDL003-Burger-personal-project/issues"
+    "url": "https://github.com/Nienorloth/GDL003-Burger-Queen-Back-End/issues"
   },
-  "homepage": "https://floating-savannah-95962.herokuapp.com/",
+  "homepage": "https://pacific-sands-67249.herokuapp.com",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
